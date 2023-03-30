@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+                <h1 class="text-center">Formulaire de contact</h1>
+                <button type="button" id="selectBtn" class="btn btn-outline-primary mb-3">Contactez l'agence</button>
+                <form action="" method="post" class="form-group" id="form" >
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <input type="text" placeholder="Nom" class="form-control">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <input type="text" placeholder="Prenom" class="form-control">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <input type="email" placeholder="exemple@gmail.com" class="form-control">
+                        </div>
+                        <div class="col-md mb-3">
+                            <textarea name="message" id="" cols="70" rows="5" class="form"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary">Envoyer</button>
+                </form>
+            </div>
+            <div class="col-lg-5">
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
