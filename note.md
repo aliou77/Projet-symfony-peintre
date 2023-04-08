@@ -1,5 +1,5 @@
-////////////// Symfony encore, utilisatin du javascript de maniere dynamique avec WEBPACK ////////////////////////
-Webpack : est un framwork qui nous permet de modulariser notre code (cender le code en morceau qu'on peut require comme en php), et a la fin lors de l'integration des fichier dans le DOM il les compressent pour en faire qu'un seul fichier JS.
+////////////// Symfony encore, utilisatin du javascript de maniere dynamique avec WEBPACK ////////////////
+Webpack : est un framwork qui nous  permet de modulariser notre code (cender le code en morceau qu'on peut require comme en php), et a la fin lors de l'integration des fichier dans le DOM il les compressent pour en faire qu'un seul fichier JS.
 le system de Webpack est similariser dans symfony avec le module <Symfony-webpack-concore>.
 - il va generer des dossiers et fichiers.
 = /assets => est le dossier qui contiendra les sources JS et CSS
@@ -16,3 +16,28 @@ le system de Webpack est similariser dans symfony avec le module <Symfony-webpac
 ## NB: une error s'affichera dans webpack disant qu'il ne connait pas Jquery
 - pour resoudre le probleme on utilise les externals qui permet de defire une variable global, en modifiant un peu le
 fichier webpack.config.js ensuite redemarer webpack
+
+----------------------------------------------------------------------------------------
+                            note creation du site peintre
+-----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
