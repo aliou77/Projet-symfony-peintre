@@ -6,10 +6,11 @@
  */
 
 // any CSS you import will output into a single css file (app.css in this case)
-import './styles/app.css';
+import './styles/app.scss';
 
 // importation de select2
 require('select2');
+
 
 // affichage et masquage du formulaire
 const btn = $('#selectBtn')

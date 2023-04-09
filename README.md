@@ -6,13 +6,18 @@ site peintre est un site web qui presente des peintures
 ## pre-requis
 
 - PHP 8
-- Maildev (nodeJS)
+- Maildev 
 - Composer
+- NodeJS et npm
   
 ### Lancer l'environement de developpement
 
 ``` bash
-php -S localhost:8080 -t public 
+composer install
+npm install
+npm run build
+npm run dev-server
+php -S localhost:8081 -t public 
 ```
 
 ## Lancer des tests
