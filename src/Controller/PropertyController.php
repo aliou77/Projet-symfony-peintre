@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class PropertyController extends AbstractController
 {
 
-    #[Route("/", "home")]
+    #[Route("/old", "home")]
     public function index(){
         return $this->render('property/index.html.twig');
     }
