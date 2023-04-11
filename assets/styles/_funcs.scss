@@ -1,0 +1,77 @@
+@import '_vars.scss';
+
+@mixin btn ($padding: 5px, $bg: $element-color, $round: 5px){
+    &{
+        padding: $padding;
+        background-color: $bg;
+        border: none;
+        border-radius: $round;
+    }
+}
+
+/* effet hover sur la navbarv */
+
+@mixin nav-hover{
+
+    &::after{
+        content: '';
+        position: absolute;
+        right: auto;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 0;
+        background-color: $element-color;   
+        transition: all .4s cubic-bezier(1, 0.1, 0.165, 1);
+    }
+    &:hover::after{
+        width: 100%;
+        left: 0;
+    }
+}
+
+/* navbar toggle make */
+
+@mixin navbar-toggle(){
+    &{
+        position: relative;
+        display: none;
+        width: 27px;
+        height: 26px;
+        background-color: $element-color;
+        cursor: pointer;
+
+        span{
+            display: inline;
+            width: 100%;
+            height: 3px;
+            background-color: white;
+            position: absolute;
+            top: calc(50% - 1.5px);
+            left: 0;
+            transition: all 0.4s ease;
+        }
+        span:first-child{
+            transform: translateY(-250%);
+            transform-origin: right top;
+        }
+        span:last-child{
+            transform: translateY(250%);
+            transform-origin: right bottom;
+        }
+        &.active span:first-child{
+            transform: rotate(45deg)  scale(0.6);
+        }
+        &.active span:last-child{
+            transform: rotate(-45deg)  scale(0.6);
+        }
+
+    }
+}
+
+
+
+
+
+
+

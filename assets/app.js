@@ -14,6 +14,7 @@ import './fontawesome/js/all.js';
 // require('select2');
 
 
+
 // affichage et masquage du formulaire
 // const btn = $('#selectBtn')
 // btn.click(e =>{
@@ -25,4 +26,17 @@ import './fontawesome/js/all.js';
 // on selectione tous les select puis on les ajoute le style select2
 // $('select').select2()
 // start the Stimulus application
+
+
+
+// NB: sans ()=>{} this fera reference a l'element clicker
+$(document).ready(function () {
+    // js de la navbar
+    $(".toggle").on("click", function(){
+        $(this).toggleClass("active");
+        $(".header-content ul").toggleClass("active");
+    })
+    
+})
+
 import './bootstrap';
