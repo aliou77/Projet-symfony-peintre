@@ -1,0 +1,122 @@
+@import '_vars.scss';
+*{
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+    font-weight: 200;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+
+
+.form-section{
+    display: flex;
+    .form-content, .landing-content{
+        max-width: 50%;
+    }
+    .form-content{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        padding: 40px 50px;
+    }
+    .landing-content{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        background-color: $element-color;
+        width: 100%;
+        h1{
+            font-size: 50px;
+            font-family: cursive;
+            margin-bottom: 5px;
+        }
+    }
+
+    #form{
+        display: flex;
+        flex-direction: column;
+        background-color: $element-color;
+        padding: 20px;
+        width: 300px;
+        height: 400px;
+        color: white;
+        border-radius: 5px;
+        box-shadow: -8px 11px 19px -11px black, 7px 5px 19px -11px black;
+        h1{
+            font-size: 30px;
+            font-weight: 200;
+            margin: 7px 0;
+        }
+        label{
+            margin: 10px 0;
+        }
+        input{
+            border: none;
+            outline: none;
+            background-color: white;
+            padding: 8px;
+            color: $element-color;
+            font-size: 17px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: all .3s;
+        }
+        input:focus{
+            transform: translateX(2px);
+        }
+
+        button{
+            margin: 20px 0 5px 0;
+            padding: 8px;
+            color: white;
+            background-color: rgba(126, 5, 5, 0.814);
+            border: 1px solid white;
+            outline: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all .4s;
+        }
+        button:hover{
+            transform: translateY(-2px);
+        }
+        .ici{
+            margin-top: 25px;
+            text-align: center;
+            a{
+                text-decoration: underline;
+                color: rgb(139, 135, 135);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 714px){
+    .form-section{
+        .landing-content{
+           display: none;
+        }
+        .form-content{
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
