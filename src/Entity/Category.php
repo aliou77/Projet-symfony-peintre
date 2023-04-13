@@ -20,7 +20,7 @@ class Category
     private ?string $nom = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
-    private ?string $descripton = null;
+    private ?string $description = null;
 
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
@@ -50,14 +50,14 @@ class Category
         return $this;
     }
 
-    public function getDescripton(): ?string
+    public function getDescription(): ?string
     {
-        return $this->descripton;
+        return $this->description;
     }
 
-    public function setDescripton(?string $descripton): self
+    public function setDescription(?string $description): self
     {
-        $this->descripton = $descripton;
+        $this->description = $description;
 
         return $this;
     }
