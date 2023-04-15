@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\PeintureRepository;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
@@ -152,6 +153,10 @@ class Peinture
         $this->datePublication = $datePublication;
 
         return $this;
+    }
+
+    public function formateddatePublication(){
+        return date_format($this->datePublication, "D M Y");
     }
 
     public function getDescription(): ?string

@@ -24,56 +24,42 @@
         <div class="home-content">
             <header>Dernieres Réalisations <span></span> </header>
             <div id="real">
+                {% for p in peintures %}
                 <a href="#">
                     <div class="real-content">
                         <div class="real-img">
                             <img src="./imgs/house.jpg" alt="" width="150" height="150">
                         </div>
                         <div class="real-desc">
-                            <h1>Titre de l'oeuvre</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, libero?</p>
-                            <span id="date-real">Ajoute le 12/04/2023</span>
+                            <h1>{{ p.nom }}</h1>
+                            <p>{{ p.description|u.truncate(120, '...') }}</p>
+                            <span id="date-real">Ajouté le {{ p.formateddatePublication }} </span>
                         </div>
                     </div>
+                    
                 </a>
-                <a href="#">
-                    <div class="real-content">
-                        <div class="real-img">
-                            <img src="./imgs/house.jpg" alt="" width="150" height="150">
-                        </div>
-                        <div class="real-desc">
-                            <h1>Titre de l'oeuvre</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, libero?</p>
-                            <span id="date-real">Ajoute le 12/04/2023</span>
-                        </div>
-                    </div>
-                </a>
+                {% endfor %}
+            
             </div>
+            {# <div class="pagination mt-3">
+                on lui passe en param l'objet qui es paginable 
+                {{ knp_pagination_render(peintures) }}
+            </div> #}
     
             <header>Dernieres Actualités <span></span></header>
             <div id="actu">
                 <div class="actu-content">
-                    <a href="#">
-                        <div class="actu-item">
-                            <h1>Titre du Actualites</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, libero?</p>
-                            <span id="date-actu">publier le 12/04/2023</span>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="actu-item">
-                            <h1>Titre du Actualites</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, libero?</p>
-                            <span id="date-actu">publier le 12/04/2023</span>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="actu-item">
-                            <h1>Titre du Actualites</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, libero?</p>
-                            <span id="date-actu">publier le 12/04/2023</span>
-                        </div>
-                    </a>
+                    {% for b in blogposts %}
+                        <a href="#">
+                            <div class="actu-item">
+                                <h1>{{ b.titre }} </h1>
+                                <p>{{ b.contenu|u.truncate(70, '...') }} </p>
+                                <span id="date-actu">publier le {{ b.formatedCreatedAt }} </span>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+                   
             </div>
         </div>
     

@@ -86,6 +86,10 @@ class BlogPost
         return $this->createdAt;
     }
 
+    public function formatedCreatedAt(){
+        return date_format($this->createdAt, "D M Y");
+    }
+
     public function setCreatedAt(\DateTimeImmutable $createdAt): self
     {
         $this->createdAt = $createdAt;

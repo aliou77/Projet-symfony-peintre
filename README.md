@@ -19,6 +19,12 @@ npm run build
 npm run dev-server
 php -S localhost:8081 -t public 
 ```
+### Ajouter des donnees de tests
+
+``` bash
+php bin/console doctrine:fixtures:load
+```
+
 
 ## Lancer des tests
 
