@@ -262,6 +262,35 @@ ul li{
     }
 }
 
+ 
+/*============================================*/
+                /* footer */
+/*============================================*/
+
+.profile{
+    color: white;
+    height: 90vh;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position-y: -1px;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+    
+    .content{
+        width: 50%;
+        margin-top: 100px;
+    }
+    h1{
+        font-size: 40px;
+        font-weight: 200;
+        margin: 0;
+    }
+    p{
+        font-size: 20px;
+    }
+}
+
 /* media screens */
 @media screen and (min-width: 500px) and (max-width: 971px) {
     .container{
@@ -329,6 +358,15 @@ ul li{
         .actu-content{
             display: flex;
             justify-content: space-between;
+        }
+    }
+    .profile{
+        justify-content: center;
+        h1{
+            font-size: 30px;
+        }
+        p{
+            font-size: 16px;
         }
     }
     

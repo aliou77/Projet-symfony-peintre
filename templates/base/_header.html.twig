@@ -17,10 +17,14 @@
                 </a>
             </li>
             <li>
-                <a href="#">Portfolio</a>
+                <a href="{{ path('portfolio') }}" class="{% if current_menu is defined and current_menu == 'portfolio' %}active{% endif %}">
+                    Portfolio
+                </a>
             </li>
             <li>
-                <a href="#">A propos</a>
+                <a href="{{ path('apropos') }}" class="{% if current_menu is defined and current_menu == 'apropos' %}active{% endif %}">
+                    A propos
+                </a>
             </li>
             <li>
                 <a href="#">Me Contacter</a>
