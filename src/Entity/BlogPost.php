@@ -90,7 +90,7 @@ class BlogPost
         return date_format($this->createdAt, "D M Y");
     }
 
-    public function setCreatedAt(\DateTimeImmutable $createdAt): self
+    public function setCreatedAt(\DateTime $createdAt): self
     {
         $this->createdAt = $createdAt;
 

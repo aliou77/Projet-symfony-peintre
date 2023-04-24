@@ -36,37 +36,6 @@ class PeintureFixtures extends Fixture
             ->setApropos("Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ex a, sint voluptatibus doloremque beatae distinctio. Recusandae fugiat necessitatibus. ")
         ;
         
-        for($i = 0; $i <= 5; $i++){
-            $cat = new Category();
-            $cat
-                ->setNom($faker->words(1, true))
-                ->setDescription($faker->words(35, true))
-                ->setSlug("slug-category-". $i+1)
-                ;
-            $manager->persist($cat);
-
-            for($j = 0; $j <= 5; $j++){
-                $peinture = new Peinture();
-                $peinture
-                    ->setNom("peinture-". ($i+$j))
-                    ->setDescription($faker->words(30, true))
-                    ->setSlug("peinture-slug-". ($i+$j))
-                    ->setLongeur($faker->numberBetween(10, 25))
-                    ->setLarger($faker->numberBetween(10, 25))
-                    ->setPrix($faker->numberBetween(20000, 60000))
-                    ->setDateRealisation($faker->dateTimeBetween('march', 'now'))
-                    ->setDatePublication($faker->dateTimeBetween('march', 'now'))
-                    ->setEnVente($faker->randomElement(['false', 'true']))
-                    ->setPortfolio($faker->randomElement(['false', 'true']))
-                    ->setUser($user)
-                    ->addCategory($cat)
-                    ->setImage("imgs/download.jpg")
-                ;
-                $manager->persist($peinture);
-            }
-            
-            $manager->flush();
-        }
         
         
         
