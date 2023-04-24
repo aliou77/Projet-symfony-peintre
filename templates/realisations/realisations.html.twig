@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title "Realisations" %} 
+
+{% block body %}
+    <section class="container">
+        <header>Dernières Réalisations <span></span> </header>
+            <div id="real">
+                {% for r in realisations %}
+                    <div class="real-content">
+                        <a href="#">
+                            <div class="real-card">
+                                <div class="real-img">
+                                    <img src="./imgs/peinture.png" alt="" width="150" height="150">
+                                </div>
+                            
+                                <div class="real-desc">
+                                    <h1>{{ r.nom }}</h1>
+                                    <p>{{ r.description|u.truncate(120, '...') }}</p>
+                                    <span id="date-real">Ajouté le {{ r.formateddatePublication }} </span>
+                                </div>
+                            </div>
+                            
+                        </a>
+                    </div>
+                {% endfor %}
+            
+            </div>
+            <div id="pagination">
+                {# on lui passe en param l'objet qui es paginable #}
+                {{ knp_pagination_render(realisations, 'base/_pagination.html.twig') }}
+            </div>
+    </section>
+{% endblock %}

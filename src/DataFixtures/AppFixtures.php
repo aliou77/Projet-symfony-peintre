@@ -19,7 +19,7 @@ class AppFixtures extends Fixture
         $user = new User();
         $blogpost = new BlogPost();
 
-        // for($i =0; $i <= 10; $i++){
+        // for($i =0; $i <= 0; $i++){
         //     $blogpost
         //         ->setTitre($faker->words(3, true))
         //         ->setSlug("slug-commentaire-$i")
@@ -30,6 +30,6 @@ class AppFixtures extends Fixture
 
         // $manager->persist($blogpost);
 
-        $manager->flush();
+        // $manager->flush();
     }
 }

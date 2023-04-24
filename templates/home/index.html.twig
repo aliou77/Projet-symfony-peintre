@@ -25,19 +25,21 @@
             <header>Dernieres Réalisations <span></span> </header>
             <div id="real">
                 {% for p in peintures %}
-                <a href="#">
+                
                     <div class="real-content">
-                        <div class="real-img">
-                            <img src="./imgs/house.jpg" alt="" width="150" height="150">
-                        </div>
-                        <div class="real-desc">
-                            <h1>{{ p.nom }}</h1>
-                            <p>{{ p.description|u.truncate(120, '...') }}</p>
-                            <span id="date-real">Ajouté le {{ p.formateddatePublication }} </span>
-                        </div>
+                        <a href="#">
+                            <div class="real-card">
+                                <div class="real-img">
+                                    <img src="./imgs/house.jpg" alt="" width="150" height="150">
+                                </div>
+                                <div class="real-desc">
+                                    <h1>{{ p.nom }}</h1>
+                                    <p>{{ p.description|u.truncate(120, '...') }}</p>
+                                    <span id="date-real">Ajouté le {{ p.formateddatePublication }} </span>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                    
-                </a>
                 {% endfor %}
             
             </div>
@@ -50,13 +52,13 @@
             <div id="actu">
                 <div class="actu-content">
                     {% for b in blogposts %}
-                        <a href="#">
                             <div class="actu-item">
-                                <h1>{{ b.titre }} </h1>
-                                <p>{{ b.contenu|u.truncate(70, '...') }} </p>
-                                <span id="date-actu">publier le {{ b.formatedCreatedAt }} </span>
+                                <a href="#">
+                                    <h1>{{ b.titre }} </h1>
+                                    <p>{{ b.contenu|u.truncate(70, '...') }} </p>
+                                    <span id="date-actu">publier le {{ b.formatedCreatedAt }} </span>
+                                </a>
                             </div>
-                        </a>
                     {% endfor %}
                 </div>
                    
