@@ -3,14 +3,18 @@
 <section class="header">
     <div class="header-content">
         <h1 class="header-logo">
-            <a href="#">Art-Peintre</a>
+            <a href="{{ path('app_home') }}">Art-Peintre</a>
         </h1>
         <ul>
             <li>
-                <a href="#">Réalisation</a>
+                <a href="{{ path('app_realisations') }}" class="{% if current_menu is defined and current_menu == 'realisations' %}active{% endif %}">
+                    Réalisations
+                </a>
             </li>
             <li>
-                <a href="#">Actualités</a>
+                <a href="{{ path('app_actualites') }}" class="{% if current_menu is defined and current_menu == 'actualites' %}active{% endif %}">
+                    Actualités
+                </a>
             </li>
             <li>
                 <a href="#">Portfolio</a>

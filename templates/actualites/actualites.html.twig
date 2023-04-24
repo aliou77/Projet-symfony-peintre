@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Actualite' %}
+
+{% block body %}
+    <section class="container">
+        <div class="home-content">
+            <header>Dernières Actualités</header>
+            <div id="actu">
+                <div class="actu-content">
+                    {% for b in blogposts %}
+                        <div class="actu-item">
+                            <a href="#">
+                                <h1>{{ b.titre }} </h1>
+                                <p>{{ b.contenu|u.truncate(70, '...') }} </p>
+                                <span id="date-actu">publier le {{ b.formatedCreatedAt }} </span>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div id="pagination">
+                {# on lui passe en param l'objet qui es paginable #}
+                {{ knp_pagination_render(blogposts, 'base/_pagination.html.twig') }}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+

@@ -8,6 +8,7 @@
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.scss';
 import './styles/connexion.scss';
+import './styles/pagination.scss';
 import './fontawesome/css/all.css';
 import './fontawesome/js/all.js';
 

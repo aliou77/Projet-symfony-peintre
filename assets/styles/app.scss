@@ -60,6 +60,10 @@ ul li{
                 color: $element-color;
                 padding-bottom: 5px;
                 @include nav-hover;
+                
+            }
+            a.active{
+                border-bottom: 1px solid $element-color;
             }
         }
         li:last-child a{
@@ -127,7 +131,7 @@ ul li{
 }
 
 .container{
-    margin: 3rem 14rem 0 14rem;
+    margin: 3rem 6rem 0 6rem;
 
 }
 .home-content{
@@ -148,21 +152,22 @@ ul li{
 }
 #real{
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
     .real-content{
-        display: flex;
+        // display: flex;
+        width: 30%;
+        margin: 20px 10px;
         background-color: $element-color;
-        margin: 10px 0;
         border-radius: 7px;
         box-shadow: $element-shadow;
-        transform: scale(0.9) ;
         transition: all .4s;
         &:hover{
-            transform: scale(1) translateY(-5px);
+            transform: translateY(-5px);
         }
         .real-img img{
-            width: 13rem;
-            height: 13rem;
+            width: 100%;
+            height: auto;
             border-radius: 5px;
             -webkit-user-drag: none;
         }
@@ -192,19 +197,24 @@ ul li{
     .actu-content{
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
         
         .actu-item{
             position: relative;
+            width: 30%;
             color: #ececec;
             background-color: $element-color;
             padding: 20px 10px;
-            margin-right: 20px;
+            margin: 12px;
             border-radius: 5px;
             box-shadow: $element-shadow;
             transition: all .4s ease-in-out;
 
             &:hover{
                 transform: translateY(-5px);
+            }
+            a{
+                color: white;
             }
 
             h1{
@@ -256,6 +266,16 @@ ul li{
 @media screen and (min-width: 500px) and (max-width: 971px) {
     .container{
         margin: 8rem;
+    }
+    #real{
+        flex-direction: column;
+        .real-content {
+            width: 100%;
+            .real-card{
+                display: flex;
+                
+            }
+        }
     }
 }
 @media screen and (max-width: 779px) { // lorsque le screen es < que le max-width
@@ -332,6 +352,18 @@ ul li{
         div{
             text-align: center;
         }
+    }
+
+    #real{
+        flex-direction: column;
+        .real-content {
+            width: 100%;
+            .real-card{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        
     }
 }
 
