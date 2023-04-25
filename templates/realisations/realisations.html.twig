@@ -1,10 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title "Realisations" %} 
+{% block title "Réalisations" %} 
 
 {% block body %}
-    <section class="container">
-        <header>Dernières Réalisations <span></span> </header>
+    <div class="mini-header">
+        <header>Réalisations</header>
+    </div>
+    <section class="mini-container">
             <div id="real">
                 {% for r in realisations %}
                     <div class="real-content">
