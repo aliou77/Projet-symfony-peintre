@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="cat-info">
+        <h1>{{ category.nom}}</h1>
+        <p>{{ category.description|nl2br }} </p>
+    </div>
+    <div class="grid-gallery">
+        {% for p in peintures %}
+            <a href="{{ p.image }}" class="grid-item" data-lightbox="gridImage">
+                <img src="{{ p.image }}" alt="" >
+            </a>
+        {% endfor %}
+    </div>
+    
+{% endblock %}

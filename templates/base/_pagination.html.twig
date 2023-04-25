@@ -22,12 +22,12 @@
     <ul class="pagination">
         {% if previous is defined %}
                  <li class="arrow">
-                     <a rel="prev" href="{{ path(route, query|merge({(pageParameterName): previous})) }}">&laquo; {{ 'Précédent' }}</a>
+                     <a rel="prev" href="{{ path(route, query|merge({(pageParameterName): previous})) }}">&laquo;</a>
                  </li>
         {% else %}
             <li class="arrow unavailable">
                 <a>
-                    &laquo; {{ 'Précédent' }}
+                    &laquo;
                 </a>
             </li>
         {% endif %}
@@ -84,13 +84,13 @@
         {% if next is defined %}
             <li class="arrow">
                 <a rel="next" href="{{ path(route, query|merge({(pageParameterName): next})) }}">
-                    {{ 'Suivant' }} &nbsp;&raquo;
+                     &nbsp;&raquo;
                 </a>
             </li>
         {% else %}
             <li class="arrow unavailable">
                 <a>
-                    {{ 'Suivant' }} &nbsp;&raquo;
+                     &nbsp;&raquo;
                 </a>
             </li>
         {% endif %}

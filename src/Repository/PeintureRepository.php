@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Category;
 use App\Entity\Peinture;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -46,6 +47,18 @@ class PeintureRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('p')
             ->orderBy('p.id', 'DESC')
             ->setMaxResults(3)
+            ->getQuery()
+            ->getResult();
+    }
+
+    /**
+     * @return Peinture[] qui contiendra les peintures lier a la categorie qui sont pour le portfolio
+     */
+    public function findAllPortfolio(Category $category): array{
+        return $this->createQueryBuilder('p')
+            ->andWhere(':category MEMBER OF p.category')
+            ->andWhere('p.portfolio = true')
+            ->setParameter('category', $category)
             ->getQuery()
             ->getResult();
     }

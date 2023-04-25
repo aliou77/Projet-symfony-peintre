@@ -1,5 +1,8 @@
 @import '_vars.scss';
+
 #pagination{
+    display: flex;
+    justify-content: center;
     ul{
         display: flex;
         .arrow.unavailable{
@@ -37,8 +40,8 @@
     #pagination{
         ul {
             li{
-                margin: 3px;
-                padding: 3px;
+                margin: 4px;
+                padding: 4px;
             }
         }
     }

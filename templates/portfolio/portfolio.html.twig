@@ -1,5 +1,32 @@
+{% extends 'base.html.twig' %}
 {% block body %}
-    <section>
-        <h1>portfolio</h1>
+    <div class="mini-header">
+        <header>Portfolio</header>
+    </div>
+    <section class="mini-container">
+            <div id="real">
+                {% for c in categories %}
+                    <div class="real-content">
+                        <a href="{{ path('portfolio_category', {slug: c.slug, id: c.id}) }}">
+                            <div class="real-card">
+                                <div class="real-img">
+                                    <img src="./imgs/peinture.png" alt="" width="150" height="150">
+                                </div>
+                            
+                                <div class="real-desc">
+                                    <h1>{{ c.nom }}</h1>
+                                    <p>{{ c.description|u.truncate(120, '...') }}</p>
+                                </div>
+                            </div>
+                            
+                        </a>
+                    </div>
+                {% endfor %}
+            
+            </div>
+            {# <div id="pagination">
+                {# on lui passe en param l'objet qui es paginable #
+                {{ knp_pagination_render(realisations, 'base/_pagination.html.twig') }}
+            </div> #}
     </section>
-{% endblock %}
+{% endblock %} 

@@ -41,4 +41,11 @@ $(document).ready(function () {
     
 })
 
+// for lightbox2 
+lightbox.option({
+    'resizeDuration': 200,
+    'wrapAround': true,
+    'disableScrolling': true // desactive la scrollbar
+})
+
 import './bootstrap';
