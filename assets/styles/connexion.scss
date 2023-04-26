@@ -77,14 +77,14 @@ a{
             padding: 8px;
             color: white;
             background-color: rgba(126, 5, 5, 0.814);
-            border: 1px solid white;
+            border: 1px solid black;
             outline: none;
             border-radius: 5px;
             cursor: pointer;
             transition: all .4s;
         }
         button:hover{
-            transform: translateY(-2px);
+            border-color: white;
         }
         .ici{
             margin-top: 25px;
@@ -99,12 +99,12 @@ a{
 
 @media screen and (max-width: 714px){
     .form-section{
+        justify-content: center;
         .landing-content{
            display: none;
         }
         .form-content{
-            display: block;
-            margin: 0 auto;
+            padding: 40px 0;
         }
     }
     

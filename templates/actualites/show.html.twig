@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title post.titre %}  
+
+{% block body %}
+    <section class="post-container">
+        <div class="post-content">
+            <header>{{post.titre}}</header>
+            <p>{{post.contenu}} </p>
+            <div class="date">
+                <p>publier le {{post.formatedCreatedAt}} </p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

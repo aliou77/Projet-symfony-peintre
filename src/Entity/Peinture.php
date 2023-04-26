@@ -136,6 +136,10 @@ class Peinture
         return $this->dateRealisation;
     }
 
+    public function formatedDateRealisation(){
+        return date_format($this->datePublication, "D M Y");
+    }
+
     public function setDateRealisation(\DateTimeInterface $dateRealisation): self
     {
         $this->dateRealisation = $dateRealisation;

@@ -10,7 +10,7 @@
             <div id="real">
                 {% for r in realisations %}
                     <div class="real-content">
-                        <a href="#">
+                        <a href="{{ path('realisation.show', {slug: r.slug, id: r.id}) }}">
                             <div class="real-card">
                                 <div class="real-img">
                                     <img src="./imgs/peinture.png" alt="" width="150" height="150">
