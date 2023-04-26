@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title realisation.nom %} 
+
+{% block body %}
+    <section class="peinture-container">
+        <div class="left">
+            <img src="{{realisation.image}}" alt="">
+        </div>
+        <div class="right">
+            <header>{{realisation.nom}}</header>
+            <div class="cats">
+                {# recuperation de la categorie lier a chaque peinture #}
+                {% for cat in realisation.category %}
+                    <p>
+                        <a href="{{path('portfolio_category', {slug: cat.slug, id: cat.id}) }}">{{cat.nom}}</a>
+                    </p>
+                {% endfor %}
+            </div>
+            <p class="description">{{realisation.description}}</p>
+            <div class="table">
+                <div class="table-item">
+                    <p>Date réalisation</p>
+                    <p>{{ realisation.formatedDateRealisation }}</p>
+                </div>
+                <div class="table-item">
+                    <p>Longueur</p>
+                    <p>{{ realisation.longeur}} </p>
+                </div>
+                <div class="table-item">
+                    <p>Largeur</p>
+                    <p>{{realisation.larger}}</p>
+                </div>
+                {% if realisation.enVente %}
+                    <div class="table-item">
+                        <p>En Vente</p>
+                        <p>{{realisation.prix|number_format(2, '.', ',')}} €</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

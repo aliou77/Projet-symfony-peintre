@@ -12,7 +12,7 @@
                 <div class="actu-content">
                     {% for b in blogposts %}
                         <div class="actu-item">
-                            <a href="#">
+                            <a href="{{ path('actualites.show', {slug: b.slug, id: b.id}) }}">
                                 <h1>{{ b.titre }} </h1>
                                 <p>{{ b.contenu|u.truncate(70, '...') }} </p>
                                 <span id="date-actu">publier le {{ b.formatedCreatedAt }} </span>

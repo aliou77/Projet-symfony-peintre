@@ -11,6 +11,7 @@
 *{
     font-size: 16px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 200;
     box-sizing: border-box;
 }
 body{
@@ -56,6 +57,7 @@ ul li{
         li{ 
             margin: 0 10px;
             a{
+                font-size: 17px;
                 position: relative;
                 color: $element-color;
                 padding-bottom: 5px;
@@ -365,6 +367,73 @@ ul li{
     // }
 }
 
+
+/*============================================*/
+            /* page realisation show */
+/*============================================*/
+
+.peinture-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 30px;
+    .letf, .right{
+        width: 100%;
+        padding: 10px 20px;
+    }
+    header{
+        text-transform: capitalize;
+        font-size: 30px;
+        color: $element-color;
+        margin-bottom: 10px;
+    }
+    .cats{
+        display: flex;
+        p a{
+            margin-right: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            color: white;
+            background-color: $element-color;
+        }
+    }
+    .description{
+        margin: 15px 0;
+    }
+    .table{
+        display: flex;
+        flex-direction: column;
+        background-color: $element-color;
+        padding: 0 8px;
+        .table-item{
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid white;
+            color: white;
+        }
+    }
+}
+
+/*============================================*/
+            /* page actualites show */
+/*============================================*/
+
+.post-container{
+    margin: 20px 30px;
+    .post-content{
+        padding: 30px;
+        header{
+            font-size: 30px;
+            text-transform: capitalize;
+            color: $element-color;
+        }
+        .date{
+            color: #676363;
+        }
+    }
+}
+
+
+
 /* media screens */
 @media screen and (min-width: 500px) and (max-width: 971px) {
     .container{
@@ -443,6 +512,13 @@ ul li{
             font-size: 16px;
         }
     }
+
+    .post-container{
+        margin: 20px;
+        .post-content{
+            width: 100%;
+        }
+    }
     
 }
 
@@ -479,4 +555,16 @@ ul li{
     }
 }
 
+// media realisation show
+@media screen and (max-width: 960px){
+    .peinture-container{
+        flex-wrap: wrap;
+        .left{
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
 

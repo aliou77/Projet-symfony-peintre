@@ -27,7 +27,7 @@
                 {% for p in peintures %}
                 
                     <div class="real-content">
-                        <a href="#">
+                        <a href="{{ path('realisation.show', {slug: p.slug, id: p.id}) }}">
                             <div class="real-card">
                                 <div class="real-img">
                                     <img src="./imgs/house.jpg" alt="" width="150" height="150">
