@@ -54,6 +54,9 @@ dans easy admin
 
 
 
+# recherche a faire:
++ traduction et changement de la langue local
++ gestion des relations entre les entity par symfony (foreign key)
 
 
 
