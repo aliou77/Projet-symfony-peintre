@@ -33,7 +33,12 @@ cette command nous permet de generer un rapport detailler des tests sous format 
 ouvert dans le nagivateur pour etre visioner.
 ce rapport nous permet de savoir quels sont les parties du code qui sont sous soumit au test unitaire ou pas pour ameliorer les tests.
 
+-----------------
+# utilisation de easy admin pour la creation du backend
+composer require easycorp/easyadmin-bundle
 
+# creation du dashbord
+php bin/console make:admin:dashboard
 
 
 
