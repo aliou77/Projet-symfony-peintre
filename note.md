@@ -39,11 +39,24 @@ composer require easycorp/easyadmin-bundle
 
 # creation du dashbord
 php bin/console make:admin:dashboard
+ensuite utiliser le templete de EasyAdmin dans la vue twig qui sera utiliser pour le dashbord
+
+# creation de CRUD via easyadmin
+php bin/console make:admin:crud
+ensuite selectionner l'entity qui sera utiliser pour la creation du CRUD
+
+# NB: apres l'installation de Easy Admin il faut activer l'extension <intl> dans php.ini
+elle permet de convertir les datetime en string
+
+# creation d'un listener d'evenement :
+pour generer automatiquement le slug et ajouter la date actuelle lors d'un ajout d'une actualite
+dans easy admin
 
 
 
-
-
+# recherche a faire:
++ traduction et changement de la langue local
++ gestion des relations entre les entity par symfony (foreign key)
 
 
 
