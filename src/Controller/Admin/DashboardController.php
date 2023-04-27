@@ -2,6 +2,10 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\BlogPost;
+use App\Entity\Category;
+use App\Entity\Commentaire;
+use App\Entity\Peinture;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -44,7 +48,11 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
+        // represente le menu a gauche du dashboard
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
+        yield MenuItem::linkToCrud('Actualités', 'fas fa-newspaper', BlogPost::class);
+        // yield MenuItem::linkToCrud('Peintures', 'fas fa-list', Peinture::class);
+        // yield MenuItem::linkToCrud('Categories', 'fas fa-list', Category::class);
+        // yield MenuItem::linkToCrud('Commentaires', 'fas fa-list', Commentaire::class);
     }
 }
