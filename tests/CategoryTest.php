@@ -23,4 +23,24 @@ class CategoryTest extends TestCase
         $this->assertTrue($cat->getDescription() == "description");
         $this->assertTrue($cat->getSlug() == "cat-1");
     }
+
+    public function TestIsFalse(){
+        $cat = new Category();
+
+        $cat->setNom("cat1");
+        $cat->setDescription("description");
+        $cat->setSlug("cat-1");
+
+        $this->assertFalse($cat->getNom() == "false");
+        $this->assertFalse($cat->getDescription() == "false");
+        $this->assertFalse($cat->getSlug() == "false");
+    }
+
+    public function testIsEmpty() {
+        $cat = new Category();
+
+        $this->assertEmpty($cat->getNom());
+        $this->assertEmpty($cat->getDescription());
+        $this->assertEmpty($cat->getSlug());
+    }
 }

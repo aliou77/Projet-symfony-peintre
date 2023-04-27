@@ -26,6 +26,12 @@ fichier webpack.config.js ensuite redemarer webpack
 # NB:
 la command creer est le script qui permetra d'envoyer les mail au users, la command exteds a un objet de symfony.
 
+--------------------------
+# php bin/phpunit --coverage-html test-coverage:
+# NB: il ne faut specifier de chemin just ecrire le nom du directory
+cette command nous permet de generer un rapport detailler des tests sous format html qui peut etre
+ouvert dans le nagivateur pour etre visioner.
+ce rapport nous permet de savoir quels sont les parties du code qui sont sous soumit au test unitaire ou pas pour ameliorer les tests.
 
 
 

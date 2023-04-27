@@ -39,6 +39,9 @@ class ContactCommand extends Command{
         parent::__construct();
     }
 
+    /**
+     * @return undefined
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         // recupere les users dont les messages ne sont pas encore envoyer
