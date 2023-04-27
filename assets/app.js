@@ -48,4 +48,8 @@ lightbox.option({
     'disableScrolling': true // desactive la scrollbar
 })
 
+// for messages flashes
+
+$("#success").fadeIn(1000).fadeOut(8000)
+
 import './bootstrap';
