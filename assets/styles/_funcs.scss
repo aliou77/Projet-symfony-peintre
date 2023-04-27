@@ -2,11 +2,13 @@
 
 @mixin btn ($padding: 5px, $bg: $element-color, $round: 5px){
     &{
+        color: white;
         padding: $padding;
         background-color: $bg;
         border: none;
         border-radius: $round;
         border: 1px solid $bg;
+        cursor: pointer;
         transition: all .4s;
     }
     &:hover{

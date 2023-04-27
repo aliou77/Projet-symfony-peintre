@@ -433,6 +433,91 @@ ul li{
 }
 
 
+/*============================================*/
+            /* formulaire contact */
+/*============================================*/
+
+.contact-container{
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    .contact-img{
+        width: 100%;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    #form{
+        width: 80%;
+        padding: 40px 70px;
+
+        .contact-me{
+            h1{
+                font-size: 30px;
+                color: $element-color;
+                margin: 5px 0;
+            }
+            h1,p{
+                text-align: center;
+            }
+        }
+
+        .form-item {
+            div{
+                display: flex;
+                flex-direction: column;
+                margin: 8px 0;
+            }
+        }
+        textarea{
+            outline: none;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: 7px 0;
+            padding-left: 10px;
+            &:focus{
+                border-color: $element-color;
+            }
+        }
+        input{
+            height: 33px;
+            outline: none;
+            padding-left: 10px;
+            margin: 7px 0;
+            border: 1px solid black;
+            border-radius: 5px;
+            font-size: 18px;
+            &:focus{
+                border-color: $element-color;
+            }
+        }
+
+        button{
+            @include btn(10px);
+        }
+        
+    }
+}
+
+
+/*============================================*/
+            /* messages flashes */
+/*============================================*/
+
+#success{
+    display: none;
+    position: fixed;
+    top: 0;
+    padding: 5px;
+    width: 100%;
+    background-color: $element-color;
+    p{
+        font-size: 17px;
+        text-align: center;
+        color: white;
+    }
+}
+
 
 /* media screens */
 @media screen and (min-width: 500px) and (max-width: 971px) {
@@ -568,3 +653,13 @@ ul li{
     }
 }
 
+@media screen and (max-width: 715px){
+    .contact-container{
+        .contact-img{
+            display: none;
+        }
+        #form{
+            width: 100%;
+        }
+    }
+}

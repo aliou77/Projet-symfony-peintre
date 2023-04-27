@@ -21,7 +21,10 @@ fichier webpack.config.js ensuite redemarer webpack
                             note creation du site peintre
 -----------------------------------------------------------------------------------------
 
+- dans ce projet on a pas envoyer directement les mail, mais on les a enregistrer dans la DB pour les envoyer automatiquement apres avec un script, cela permet de ne pas envoyer directement le mail des que le user envoyer le form-concat et aussi pour que les donnees soient pas perdu.
 
+# NB:
+la command creer est le script qui permetra d'envoyer les mail au users, la command exteds a un objet de symfony.
 
 
 

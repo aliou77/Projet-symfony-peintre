@@ -5,6 +5,11 @@
 {% block body %}
 
 <main>
+    {% for message in app.flashes('success') %}
+        <div id="success">
+            <p>{{message}}</p>
+        </div>
+    {% endfor %}
     <section class="langind">
         <div class="landing-content">
             <div class="landing-card">

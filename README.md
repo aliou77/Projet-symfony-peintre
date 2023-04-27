@@ -31,3 +31,14 @@ php bin/console doctrine:fixtures:load
 ``` bash
 php bin/phpunit --testdox  
 ```
+
+## Production
+
+## Envoyer des mails
+
+les mail de prise de contact sont stoquer en DB, pour les envoyer au Peintre par mail il faut
+executer la commande suivante.
+
+``` bash
+php bin/console app:send-email
+```

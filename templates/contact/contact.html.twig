@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title "Contact" %}
+
+{% block body %}
+    <section class="contact-container">
+        <div class="contact-img" style="background-image: url('imgs/profile.jpg');">
+        </div>
+        <div id="form">
+            <div class="contact-me">
+                <h1>Me Contacter</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            {{ form_start(form) }}
+                <div class="form-item">
+                    {{ form_row(form.nom) }}
+                </div>
+                <div class="form-item">
+                    {{ form_row(form.email) }}
+                </div>
+                <div class="form-item">
+                    {{ form_row(form.message) }}
+                </div>
+                <button type="submit">Envoyer</button>
+            {{ form_end(form) }}
+        </div>
+    </section>
+{% endblock %}
