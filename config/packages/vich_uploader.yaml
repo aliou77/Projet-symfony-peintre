@@ -1,0 +1,10 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+       peinture_image:
+           uri_prefix: /images/peinture
+           upload_destination: '%kernel.project_dir%/public/images/peinture'
+           namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+           delete_on_update: false # ne pas supprimer une image lors d'un update
+           delete_on_remove: false # lors d'un remove

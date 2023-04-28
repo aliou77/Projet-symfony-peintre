@@ -20,7 +20,7 @@ class RealisationsController extends AbstractController
         ): Response {
 
         $realisations = $paginator->paginate(
-            $repo->findAll(),
+            $repo->findBy([], ['id' => 'DESC']),
             $request->query->getInt('page', 1),
             6
         );
