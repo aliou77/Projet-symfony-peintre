@@ -3,6 +3,7 @@
 namespace App\EventSubscriber;
 
 use App\Entity\BlogPost;
+use App\Entity\Peinture;
 use DateTime;
 use EasyCorp\Bundle\EasyAdminBundle\Event\BeforeEntityPersistedEvent;
 use Symfony\Bundle\SecurityBundle\Security;
@@ -25,23 +26,29 @@ class EasyAdminSubscriber implements EventSubscriberInterface{
         return [
             // lorsque cet evenement sera declancher il appelera la method setBlogPostSlugAndDateaAndUser
             // l'event sera lancer avant le persist des data du nouveau blogpost (easyAdmin) dans la DB.
-            BeforeEntityPersistedEvent::class => ["setBlogPostSlugAndDateaAndUser"]
+            BeforeEntityPersistedEvent::class => ["setDateaAndUser"]
         ];
     }
 
-    public function setBlogPostSlugAndDateaAndUser(BeforeEntityPersistedEvent $event){
-        // recupere l'instance de BlogPost
+    public function setDateaAndUser(BeforeEntityPersistedEvent $event){
+        // recupere l'instance parmi les entites qui sont lier a doctrine dans notre projet
         $entity = $event->getEntityInstance();
 
-        if(!$entity instanceof BlogPost){
-            return;
+        if($entity instanceof BlogPost){
+            // definition de la date
+            $entity->setCreatedAt(new DateTime());
+            // recupere et definit le user qui s'est connecter au back office (EasyAdmin)
+            $entity->setUser($this->security->getUser()); // 
+        }
+        if($entity instanceof Peinture){
+            $entity->setDateRealisation(new DateTime());
+            $entity->setUser($this->security->getUser()); 
         }
         // definition du slug apres l'avoir slugifier
-        $slug = $this->slugger->slug($entity->getTitre());
-        $entity->setSlug($slug);
-        // definition de la date
-        $entity->setCreatedAt(new DateTime());
-        // recupere et definit le user qui s'est connecter au back office (EasyAdmin)
-        $entity->setUser($this->security->getUser()); // 
+        // NB: cette fonctionnalite a ete remplacer par l'autocompletion du slug par EasyAdmin
+        // $slug = $this->slugger->slug($entity->getTitre());
+        // $entity->setSlug($slug);
+        
+        return; // si non
     }
 }

@@ -19,9 +19,7 @@ class DashboardController extends AbstractDashboardController
     {
         // return parent::index();
 
-        return $this->render("admin/dashboard.html.twig", [
-
-        ]);
+        return $this->render("admin/dashboard.html.twig");
 
         // Option 1. You can make your dashboard redirect to some common page of your backend
         //
@@ -51,7 +49,7 @@ class DashboardController extends AbstractDashboardController
         // represente le menu a gauche du dashboard
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Actualités', 'fas fa-newspaper', BlogPost::class);
-        // yield MenuItem::linkToCrud('Peintures', 'fas fa-list', Peinture::class);
+        yield MenuItem::linkToCrud('Peintures', 'fas fa-palette', Peinture::class);
         // yield MenuItem::linkToCrud('Categories', 'fas fa-list', Category::class);
         // yield MenuItem::linkToCrud('Commentaires', 'fas fa-list', Commentaire::class);
     }

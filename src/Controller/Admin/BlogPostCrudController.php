@@ -7,6 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -26,7 +27,8 @@ class BlogPostCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm(), // new() recois le nom de la property de la class BlogPost
             TextField::new('titre'),
-            TextField::new('slug')->hideOnForm(), // n'affichera pas le champs slug dans les formulaire just dans le dashboard
+            SlugField::new("slug")->setTargetFieldName('titre')->hideOnIndex(), // permet d'autoremplir le slug grace au nom de la peinture
+            // TextField::new('slug')->hideOnForm(), // n'affichera pas le champs slug dans les formulaire just dans le dashboard
             // TextEditorField::new('contenu'),
             TextareaField::new('contenu'),
             DateTimeField::new('createdAt')->hideOnForm()
@@ -38,7 +40,7 @@ class BlogPostCrudController extends AbstractCrudController
     {
         return $crud
             // modification de lorsdre d'affichage des blogpostes 
-            ->setDefaultSort(['createdAt', 'DESC'])
+            ->setDefaultSort(['createdAt' => 'DESC'])
             ;
     }
 }

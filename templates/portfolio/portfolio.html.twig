@@ -7,11 +7,12 @@
     <section class="mini-container">
             <div id="real">
                 {% for c in categories %}
+                {% set peinture = c.peintures|last %} {# recupere la derniere peinture associer a la categorie#}
                     <div class="real-content">
                         <a href="{{ path('portfolio_category', {slug: c.slug, id: c.id}) }}">
                             <div class="real-card">
                                 <div class="real-img">
-                                    <img src="./imgs/peinture.png" alt="" width="150" height="150">
+                                    <img src="{{ vich_uploader_asset(peinture, 'imageFile') }}" alt="" width="150" height="150">
                                 </div>
                             
                                 <div class="real-desc">

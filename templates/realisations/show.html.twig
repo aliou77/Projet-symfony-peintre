@@ -5,7 +5,7 @@
 {% block body %}
     <section class="peinture-container">
         <div class="left">
-            <img src="{{realisation.image}}" alt="">
+            <img src="{{ vich_uploader_asset(realisation, 'imageFile') }}" alt="">
         </div>
         <div class="right">
             <header>{{realisation.nom}}</header>
@@ -25,11 +25,11 @@
                 </div>
                 <div class="table-item">
                     <p>Longueur</p>
-                    <p>{{ realisation.longeur}} </p>
+                    <p>{{ realisation.longueur}} </p>
                 </div>
                 <div class="table-item">
                     <p>Largeur</p>
-                    <p>{{realisation.larger}}</p>
+                    <p>{{realisation.largeur}}</p>
                 </div>
                 {% if realisation.enVente %}
                     <div class="table-item">
