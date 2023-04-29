@@ -7,8 +7,8 @@
     </div>
     <div class="grid-gallery">
         {% for p in peintures %}
-            <a href="{{ vich_uploader_asset(p, 'imageFile') }}" class="grid-item" data-lightbox="gridImage" data-title="{{p.nom}}">
-                <img src="{{ vich_uploader_asset(p, 'imageFile') }}" alt="" >
+            <a href="{{ vich_uploader_asset(p, 'imageFile') |imagine_filter('miniature') }}" class="grid-item" data-lightbox="gridImage" data-title="{{p.nom}}">
+                <img src="{{ vich_uploader_asset(p, 'imageFile') |imagine_filter('miniature') }}" alt="" >
             </a>
         {% endfor %}
     </div>

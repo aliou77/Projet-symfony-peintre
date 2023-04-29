@@ -35,7 +35,7 @@
                         <a href="{{ path('realisation.show', {slug: p.slug, id: p.id}) }}">
                             <div class="real-card">
                                 <div class="real-img">
-                                    <img src="{{ vich_uploader_asset(p, 'imageFile') }}" alt="" width="150" height="150">
+                                    <img src="{{ vich_uploader_asset(p, 'imageFile') |imagine_filter('fully') }}" alt="" width="150" height="150">
                                 </div>
                                 <div class="real-desc">
                                     <h1>{{ p.nom }}</h1>

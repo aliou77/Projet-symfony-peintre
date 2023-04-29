@@ -12,7 +12,7 @@
                         <a href="{{ path('portfolio_category', {slug: c.slug, id: c.id}) }}">
                             <div class="real-card">
                                 <div class="real-img">
-                                    <img src="{{ vich_uploader_asset(peinture, 'imageFile') }}" alt="" width="150" height="150">
+                                    <img src="{{ vich_uploader_asset(peinture, 'imageFile') |imagine_filter('miniature') }}" alt="" width="150" height="150">
                                 </div>
                             
                                 <div class="real-desc">
