@@ -52,6 +52,16 @@ elle permet de convertir les datetime en string
 pour generer automatiquement le slug et ajouter la date actuelle lors d'un ajout d'une actualite
 dans easy admin
 
+---------------------------------------------
+# optimisation des image avec liip/imagine-bundle
+apres l'installation, pour que le bundle fonctionne il faut activer l'extension <gd> dans php.ini qui permet son fonctionnement.
+
+# if creating media directory don't work
+u can use this command but u gotta do it for all ur pictures one by one
+php bin/console liip:imagine:cache:resolve /images/peinture/peinture.png
+
+
+
 
 
 # recherche a faire:
