@@ -60,7 +60,13 @@ apres l'installation, pour que le bundle fonctionne il faut activer l'extension 
 u can use this command but u gotta do it for all ur pictures one by one
 php bin/console liip:imagine:cache:resolve /images/peinture/peinture.png
 
+------------------------------------------
+# mise en place d'un sitemap:
+il nous permetra le referencement du site, on utilisera un format xml
 
+# creer un controller dedier au sitemap
+
+# ajouter toutes les routes dans dans la vue twig (format xml)
 
 
 
@@ -68,6 +74,7 @@ php bin/console liip:imagine:cache:resolve /images/peinture/peinture.png
 + traduction et changement de la langue local et les champs
 + gestion des relations entre les entity par symfony (foreign key)
 + date traduction
++ referencement avec un sitemap.xml
 
 
 # a finir:
