@@ -79,7 +79,7 @@ il nous permetra le referencement du site, on utilisera un format xml
 
 # a finir:
 - les test unitaire (code coverage)
-- optimisation des images avec liipImager
+- optimisation des images avec liipImager, il se peut que ca soit le cache dans le navigateur qui pose problem, le supprimer apres.
 
 
 
