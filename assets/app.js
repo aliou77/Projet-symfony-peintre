@@ -49,7 +49,23 @@ lightbox.option({
 })
 
 // for messages flashes
-
 $("#success").fadeIn(1000).fadeOut(8000)
+
+// for form commentaire
+const btn = $('#btn-show-hide')
+const close = $("#close")
+btn.click(function(e){
+    e.preventDefault();
+    $('#comment form').toggle(1000);
+    this.style.display = "none"
+    close.slideDown(1000)
+})
+
+close.click(function(e){
+    e.preventDefault();
+    this.style.display = "none"
+    document.querySelector('#comment form').style.display = "none"
+    btn.toggle(1000)
+})
 
 import './bootstrap';

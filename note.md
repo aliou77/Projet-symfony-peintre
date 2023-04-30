@@ -70,7 +70,9 @@ php bin/console liip:imagine:cache:resolve /images/peinture/peinture.png
 + date traduction
 
 
-
+# a finir:
+- les test unitaire (code coverage)
+- optimisation des images avec liipImager
 
 
 
