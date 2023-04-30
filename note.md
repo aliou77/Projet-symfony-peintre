@@ -78,7 +78,7 @@ il nous permetra le referencement du site, on utilisera un format xml
 + deployement du site en ligne
 
 # a finir:
-- les test unitaire (code coverage)
+- les test unitaire (code coverage)|| ou voir s'il ya un moyen d'effectuer les test automatiquement sans les ecrire.
 - optimisation des images avec liipImager, il se peut que ca soit le cache dans le navigateur qui pose problem, le supprimer apres.
 
 
