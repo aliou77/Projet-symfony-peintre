@@ -75,7 +75,7 @@ il nous permetra le referencement du site, on utilisera un format xml
 + gestion des relations entre les entity par symfony (foreign key)
 + date traduction
 + referencement avec un sitemap.xml
-
++ deployement du site en ligne
 
 # a finir:
 - les test unitaire (code coverage)
