@@ -1,0 +1,11 @@
+<div id="comment-items">
+    {% for com in commentaires %}
+        <div class="comment-item">
+            <h1>{{ com.autheur }} </h1>
+            <p>{{com.contenu }} </p>
+            <div class="footer-comment">
+                <p><i>{{ com.formatedCreatedAt }}</i></p>
+            </div>
+        </div>
+    {% endfor %}
+</div>

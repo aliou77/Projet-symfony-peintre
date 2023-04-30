@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\CommentaireRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\Date;
 
 #[ORM\Entity(repositoryClass: CommentaireRepository::class)]
 class Commentaire
@@ -32,6 +33,9 @@ class Commentaire
 
     #[ORM\ManyToOne(inversedBy: 'commentaires')]
     private ?BlogPost $blogpost = null;
+
+    #[ORM\Column]
+    private ?bool $isPublished = null;
 
     public function getId(): ?int
     {
@@ -79,6 +83,10 @@ class Commentaire
         return $this->createdAt;
     }
 
+    public function formatedCreatedAt(){
+        return date_format($this->createdAt, "d-m-Y");
+    }
+
     public function setCreatedAt(\DateTimeImmutable $createdAt): self
     {
         $this->createdAt = $createdAt;
@@ -106,6 +114,18 @@ class Commentaire
     public function setBlogpost(?BlogPost $blogpost): self
     {
         $this->blogpost = $blogpost;
+
+        return $this;
+    }
+
+    public function isIsPublished(): ?bool
+    {
+        return $this->isPublished;
+    }
+
+    public function setIsPublished(bool $isPublished): self
+    {
+        $this->isPublished = $isPublished;
 
         return $this;
     }

@@ -518,6 +518,116 @@ ul li{
     }
 }
 
+/*============================================*/
+            /* form commentaire */
+/*============================================*/
+
+#comment form{
+    display: none;
+}
+.form-container{
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 20px;
+
+    .form-content{
+        width: 40%;
+        #btn-show-hide{
+            @include btn($padding: 10px);
+            margin: 10px 0;
+        }
+    }
+
+    .btn-close{
+        display: flex;
+        justify-content: end;
+        #close{
+            display: none;
+            outline: none;
+            color: $element-color;
+            background-color: transparent;
+            border: 1px solid $element-color;
+            border-radius: 3px;
+            transition: all .2s;
+            &:hover{
+                cursor: pointer;
+                background-color: $element-color;
+                color: white;
+            }
+        }
+    }
+    
+}
+
+#commentaire div{
+    display: flex;
+    flex-direction: column;
+    label{
+        margin: 5px 0;
+    }
+    input{
+        outline: none;
+        color: $element-color;
+        height: 30px;
+        border: 1px solid black;
+        border-radius: 5px;
+        margin: 5px 0;
+        width: 100%;
+        padding-left: 8px;
+        transition: all .4s;
+        &:focus{
+            border-color: $element-color;
+        }
+    }
+
+    textarea{
+        outline: none;
+        border: 1px solid black;
+        border-radius: 5px;
+        margin: 5px 0;
+        padding-left: 8px;
+        transition: all .4s;
+        &:focus{
+            border-color: $element-color;
+        }
+    }
+    
+}
+#btn-submit{
+    @include btn($padding: 10px);
+    margin-top: 8px;
+}
+
+// commentaire items
+
+#comment-items{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    .comment-item{
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: $element-shadow;
+        width: 60%;
+        background-color: $element-color;
+        color: white;
+        h1{
+            font-size: 25px;
+            font-weight: 200;
+            text-transform: capitalize;
+        }
+        p{
+            margin: 5px;
+            text-align: center;
+        }
+    }
+    .footer-comment{
+        display: flex;
+        justify-content: end;
+    }
+}
+
 
 /* media screens */
 @media screen and (min-width: 500px) and (max-width: 971px) {

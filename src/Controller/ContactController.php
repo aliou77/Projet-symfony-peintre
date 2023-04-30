@@ -45,7 +45,7 @@ class ContactController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             $data = $form->getData();
             $serv->persistContact($contact);
-            $this->addFlash("success", "Votre message a bien été envoyer !");
+            $this->addFlash("success", "Votre message a bien été envoyé !");
             return $this->redirectToRoute("app_home");
         }
 

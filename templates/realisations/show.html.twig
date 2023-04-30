@@ -3,6 +3,11 @@
 {% block title realisation.nom %} 
 
 {% block body %}
+    {% for message in app.flashes('success') %}
+        <div id="success">
+            <p>{{message}}</p> 
+        </div>
+    {% endfor %}
     <section class="peinture-container">
         <div class="left">
             <img src="{{ vich_uploader_asset(realisation, 'imageFile') }}" alt="">
@@ -39,5 +44,9 @@
                 {% endif %}
             </div>
         </div>
+    </section>
+    <section id="comment">
+        {{ include('commentaires/_form.html.twig', {form: form})  }}
+        {{ include('commentaires/commentaires.html.twig', {commentaires: commentaires})  }}
     </section>
 {% endblock %}

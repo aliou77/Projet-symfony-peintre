@@ -337,4 +337,11 @@ class Peinture
 
         return $this;
     }
+
+    // permet de returner le nom de la peinture lier au commentaire pour les afficher 
+    // lors de l'ajout d'un commentaire.
+    // evite de returner l'objet, parce qu'il ne peut etre converti en string
+    public function __toString(){
+        return $this->nom;
+    }
 }

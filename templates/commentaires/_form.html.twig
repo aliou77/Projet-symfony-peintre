@@ -1,0 +1,14 @@
+<div class="form-container">
+    <div class="form-content">
+        <div>
+            <button id="btn-show-hide" type="button">Laisser un commentaire</button>
+        </div>
+        <div class="btn-close">
+            <button id="close">X</button>
+        </div>
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button id="btn-submit" type="submit">Envoyer</button>
+        {{ form_end(form) }}
+    </div>
+</div>

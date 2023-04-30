@@ -3,7 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\BlogPost;
+use App\Entity\Commentaire;
 use App\Repository\BlogPostRepository;
+use App\Repository\CommentaireRepository;
+use App\Service\ServiceCommentaire;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -33,7 +36,10 @@ class ActualitesController extends AbstractController
     }
 
     #[Route("/post-{slug}-{id}", "actualites.show")]
-    public function show(BlogPost $blogPost, string $slug, int $id): Response{
+    public function show(BlogPost $blogPost, string $slug, int $id, Request $request, 
+            ServiceCommentaire $serv, CommentaireRepository $repo
+        ): Response 
+    {
         // si le slug ne correspond pas a celui mis dans l'URL on renvoie vers le bon 
         if(($blogPost->getSlug() !== $slug) || ($blogPost->getId() !== $id)){
             $this->redirectToRoute('actualites.show', [
@@ -41,8 +47,28 @@ class ActualitesController extends AbstractController
                 'slug' => $blogPost->getSlug()
             ], 301);
         }
+        
+        $commentaires = $repo->findCommentaires($blogPost);
+        $commentaire = new Commentaire();
+        $form = $this->createForm(CommentaireType::class, $commentaire);
+        $form->handleRequest($request);
+        
+        if ($form->isSubmitted() && $form->isValid()) { 
+            $data = $form->getData();
+            $serv->persistCommentaire($data, null, $blogPost);
+
+
+            $this->addFlash("success", "Votre commentaire a été posté, il sera publié apres validation !");
+            $this->redirectToRoute('actualites.show', [
+                'id' => $id,
+                'slug' => $slug
+            ]);
+        };
+
         return $this->render("actualites/show.html.twig", [
             'post' => $blogPost,
+            'form' => $form->createView(),
+            'commentaires' => $commentaires,
         ]);
     }
 }
