@@ -1,6 +1,7 @@
 ### Site peintre
 
-site peintre est un site web qui presente des peintures
+Ce projet est un site web créer à partir du framework Symfony qui expose des peintures, avec une administration 
+dans le back office, avec un système d'envoi d'email.
 
 ### Environement de developpement
 ## pre-requis
